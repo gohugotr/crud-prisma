@@ -12,5 +12,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ```bash
 npm i daisyui axios
+npm i -D prisma
+npm i @prisma/client
+npx prisma init
 ```
 
