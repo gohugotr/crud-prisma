@@ -1,8 +1,9 @@
+import ProductLayout from "./layout"
 
 
 const Product = () => {
   return (
-    <>
+    <ProductLayout>
         <table className="table w-full">
             <thead>
                 <tr>
@@ -23,7 +24,7 @@ const Product = () => {
                 </tr>
             </tbody>
         </table>
-    </>
+    </ProductLayout>
   )
 }
 
