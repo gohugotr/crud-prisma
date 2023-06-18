@@ -1,9 +1,28 @@
-
+import { log } from "console";
 import ProductLayout from "./layout"
+import {PrismaClient} from '@prisma/client';
 
+const prisma = new PrismaClient()
 
+const getProducts = async() => {
+    const res = await prisma.product.findMany({
+        select:{
+            id:true,
+            title:true,
+            price:true,
+            brandId:true,
+            brand:true,
+        }
+    })
+    return res
+}
 
-function Product() {
+const Product = async () => {
+
+    const products = await getProducts()
+    console.log(products);
+    
+    
     return (
         <ProductLayout>
             <table className="table w-full">
@@ -17,13 +36,17 @@ function Product() {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                    {
+                        products.map((product, index) => (
+                                <tr key={index}>
+                                    <td>{index + 1}</td>
+                                    <td>{product.title}</td>
+                                    <td>{product.price}</td>
+                                    <td>{product.brand.name}</td>
+                                    <td>Action</td>
+                                </tr>
+                            ))
+                    }
                 </tbody>
             </table>
         </ProductLayout>
