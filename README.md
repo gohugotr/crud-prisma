@@ -14,6 +14,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 npm i daisyui axios
 npm i -D prisma
 npm i @prisma/client
-npx prisma init
 ```
 
+```bash
+npx prisma init
+npx prisma migrate dev
+npx prisma studio
+```
