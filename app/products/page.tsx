@@ -1,10 +1,7 @@
-import { Metadata } from "next"
+
 import ProductLayout from "./layout"
 
-export const metadata: Metadata = {
-    title: 'Product',
-    description: 'Product Page',
-}
+
 
 function Product() {
     return (
