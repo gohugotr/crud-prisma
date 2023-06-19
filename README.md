@@ -21,3 +21,5 @@ npx prisma init
 npx prisma migrate dev
 npx prisma studio
 ```
+
+Rest Client kullan (Api testi için)

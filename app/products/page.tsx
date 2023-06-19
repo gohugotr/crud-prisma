@@ -1,4 +1,3 @@
-import { log } from "console";
 import ProductLayout from "./layout"
 import {PrismaClient} from '@prisma/client';
 
